@@ -2,6 +2,7 @@ import * as React from "react"
 import '../fonts/perpetua/perpeta.ttf'
 import Portrait from '../images/protrait.png'
 import styled from "styled-components"
+import { TweenMax, Power3 } from 'gsap'
 
 // styles
 const HeaderContainer = styled.div`
@@ -16,6 +17,7 @@ const Heading = styled.h1`
   font-size: 8em;
   letter-spacing: 0.2em;
   font-weight: 200;
+  opacity: 0;
 
   @media (max-width: 1100px) {
     font-size: 4em;
@@ -49,14 +51,29 @@ const Description = styled.p`
 
 `
 
+//animation
+
+
 // markup
 const IndexPage = () => {
+  let titleItem = React.useRef(null)
+
+  React.useEffect(() => {
+    TweenMax.to(
+      titleItem, .8, {
+        opacity: 1,
+        y: -20,
+        ease: Power3.easeOut
+      }
+    )
+  })
+
   return (
     <main >
       <title>Portfolius</title>   
       <HeaderContainer>
 
-        <Heading>
+        <Heading ref={el => titleItem = el}>
           Yoannesbourg
         </Heading>
 

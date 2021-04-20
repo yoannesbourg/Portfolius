@@ -64,10 +64,10 @@ const IndexPage = () => {
 
   React.useEffect(() => {
     TweenMax.to(
-      titleItem, .8, { y: "0%", duration: 15, stagger: 0.25, opacity: 1 }
+      titleItem, .8, { y: "0%", duration: 3, stagger: 0.25, opacity: 1 }
     )
     TweenMax.to(
-      portraitItem, .8, { y: '0%', duration: 1.5 , opacity: 1, delay: 0.5}
+      portraitItem, .8, { y: '0%', duration: 3 , opacity: 1, delay: 0.5}
     )
     TweenMax.to(
       descriptionItem, .8, { y: '0%', duration: 1.5 , opacity: 1, delay:1}

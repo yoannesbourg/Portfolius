@@ -15,6 +15,7 @@ const Heading = styled.h1`
   font-family: 'Perpetua';
   font-size: 8em;
   letter-spacing: 0.2em;
+  font-weight: 200;
 
   @media (max-width: 1100px) {
     font-size: 4em;
@@ -25,8 +26,8 @@ const Heading = styled.h1`
 const HeaderImg = styled.img.attrs({
   src: Portrait
 })`
-width: 40%;
-margin: 0 auto;
+width: 35%;
+margin: -7em auto 1em auto;
 
 @media(min-width: 1200px) {
   width: 30%;
@@ -37,16 +38,38 @@ margin: 0 auto;
 }
 `
 
+const Description = styled.p`
+  color: black;
+  font-family: 'Perpetua';
+  font-size: 2em;
+  letter-spacing: 0.2em;
+  font-weight: 200;
+  line-height: 1.5;
+  text-align: center;
+
+`
+
 // markup
 const IndexPage = () => {
   return (
     <main >
       <title>Portfolius</title>   
       <HeaderContainer>
-      <Heading>
-        Yoannesbourg
-      </Heading>
+
+        <Heading>
+          Yoannesbourg
+        </Heading>
+
         <HeaderImg />
+
+        <Description>
+          Ave Cesar,<br />
+          Moi Yoannus, fidèle chevalier de l'empire gaulois.<br />
+          Aprenti des arts obscures<br />
+          Reactus, Nextus JSus, et fidèle ecrivain de Javascriptum.
+
+        </Description>
+
       </HeaderContainer>
       
     </main>

@@ -4,14 +4,22 @@ import Portrait from '../images/protrait.png'
 import styled from "styled-components"
 
 // styles
-const headingStyle = {
-  color: 'red',
-  fontFamily: 'Perpetua'
-}
-
 const HeaderContainer = styled.div`
 display: flex;
-justify-content: center;
+flex-direction:column;
+align-items: center;
+`
+
+const Heading = styled.h1`
+  color: black;
+  font-family: 'Perpetua';
+  font-size: 8em;
+  letter-spacing: 0.2em;
+
+  @media (max-width: 1100px) {
+    font-size: 4em;
+    margin-top: 2em;
+  }
 `
 
 const HeaderImg = styled.img.attrs({
@@ -33,17 +41,11 @@ margin: 0 auto;
 const IndexPage = () => {
   return (
     <main >
-      <title>Portfolius</title>
-      <h1 style={headingStyle}>
-        Congratulations
-        <br />
-        <span>— you just made a Gatsby site! </span>
-        <span role="img" aria-label="Party popper emojis">
-          🎉🎉🎉
-        </span>
-      </h1>
-     
+      <title>Portfolius</title>   
       <HeaderContainer>
+      <Heading>
+        Yoannesbourg
+      </Heading>
         <HeaderImg />
       </HeaderContainer>
       

@@ -28,8 +28,10 @@ const Heading = styled.h1`
 const HeaderImg = styled.img.attrs({
   src: Portrait
 })`
-width: 35%;
-margin: -7em auto 1em auto;
+  width: 35%;
+  margin: -7em auto 1em auto;
+  transform: translateY(-100%);
+  opacity: 0;
 
 @media(min-width: 1200px) {
   width: 30%;
@@ -57,14 +59,18 @@ const Description = styled.p`
 // markup
 const IndexPage = () => {
   let titleItem = React.useRef(null)
+  let portraitItem = React.useRef(null)
+  let descriptionItem = React.useRef(null)
 
   React.useEffect(() => {
     TweenMax.to(
-      titleItem, .8, {
-        opacity: 1,
-        y: -20,
-        ease: Power3.easeOut
-      }
+      titleItem, .8, { y: "0%", duration: 15, stagger: 0.25, opacity: 1 }
+    )
+    TweenMax.to(
+      portraitItem, .8, { y: '0%', duration: 1.5 , opacity: 1, delay: 0.5}
+    )
+    TweenMax.to(
+      descriptionItem, .8, { y: '0%', duration: 1.5 , opacity: 1, delay:1}
     )
   })
 
@@ -77,14 +83,14 @@ const IndexPage = () => {
           Yoannesbourg
         </Heading>
 
-        <HeaderImg />
+          <HeaderImg ref={el => portraitItem = el}/>
 
-        <Description>
+        <Description ref={el => descriptionItem = el}>
           Ave Cesar,<br />
-          Moi Yoannus, fidèle chevalier de l'empire gaulois.<br />
+          Moi Yoannus, fidèle serveur de l'empire gaulois<br />
+          Et ecrivain de Javascriptum<br />
           Aprenti des arts obscures<br />
-          Reactus, Nextus JSus, et fidèle ecrivain de Javascriptum.
-
+          Reactus, Express JSus et PostgreSQLus.
         </Description>
 
       </HeaderContainer>

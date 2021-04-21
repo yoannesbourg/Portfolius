@@ -5,7 +5,7 @@ import styled from "styled-components"
 import { TweenMax, Power3 } from 'gsap'
 
 // styles
-const HeaderContainer = styled.div`
+const Container = styled.div`
 display: flex;
 flex-direction:column;
 align-items: center;
@@ -37,6 +37,10 @@ const HeaderImg = styled.img.attrs({
   width: 30%;
 }
 
+@media(max-width: 1200px) {
+  margin-top: 0;
+}
+
 @media(max-width: 768px) {
   width: 90%;
 }
@@ -51,6 +55,16 @@ const Description = styled.p`
   line-height: 1.5;
   text-align: center;
 
+`
+
+const SectionTitle = styled.h2`
+color: black;
+  font-family: 'Perpetua';
+  font-size: 1.7em;
+  letter-spacing: 0.2em;
+  font-weight: 200;
+  line-height: 1.5;
+  text-align: center;
 `
 
 //animation
@@ -77,7 +91,7 @@ const IndexPage = () => {
   return (
     <main >
       <title>Portfolius</title>   
-      <HeaderContainer>
+      <Container>
 
         <Heading ref={el => titleItem = el}>
           Yoannesbourg
@@ -93,7 +107,12 @@ const IndexPage = () => {
           Reactus, Express JSus et PostgreSQLus.
         </Description>
 
-      </HeaderContainer>
+        {/*Portfolius*/}
+        <SectionTitle>
+          - PORTFOLIUS -
+        </SectionTitle>
+
+      </Container>
       
     </main>
   )

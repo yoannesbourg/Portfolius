@@ -59,7 +59,7 @@ const Description = styled.p`
 `
 
 const SectionTitle = styled.h2`
-color: black;
+  color: black;
   font-family: 'Perpetua';
   font-size: 1.7em;
   letter-spacing: 0.2em;
@@ -112,8 +112,9 @@ const IndexPage = () => {
         {/*Portfolius*/}
         <SectionTitle>
           - PORTFOLIUS -
-          <PortfolioBlock/>
         </SectionTitle>
+
+        <PortfolioBlock/>
 
       </Container>
       

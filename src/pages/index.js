@@ -10,6 +10,8 @@ const Container = styled.div`
 display: flex;
 flex-direction:column;
 align-items: center;
+width: 50%;
+margin: 0 auto;
 `
 
 const Heading = styled.h1`
@@ -29,13 +31,12 @@ const Heading = styled.h1`
 const HeaderImg = styled.img.attrs({
   src: Portrait
 })`
-  width: 35%;
   margin: -7em auto 1em auto;
   transform: translateY(-100%);
   opacity: 0;
 
 @media(min-width: 1200px) {
-  width: 30%;
+  width: 40%;
 }
 
 @media(max-width: 1200px) {
@@ -47,7 +48,7 @@ const HeaderImg = styled.img.attrs({
 }
 `
 
-const Description = styled.p`
+const Text = styled.p`
   color: black;
   font-family: 'Perpetua';
   font-size: 2em;
@@ -68,6 +69,14 @@ const SectionTitle = styled.h2`
   text-align: center;
   margin-top: 5em;
   margin-bottom: 0;
+`
+
+const Footer = styled.div`
+  display: flex;
+  justify-content: space-around;
+  margin-top: 14em;
+  width: 100%;
+  font-size: .7em;
 `
 
 //animation
@@ -102,13 +111,13 @@ const IndexPage = () => {
 
           <HeaderImg ref={el => portraitItem = el}/>
 
-        <Description ref={el => descriptionItem = el}>
+        <Text ref={el => descriptionItem = el}>
           Ave Cesar,<br />
           Moi Yoannus, fidèle serveur de l'empire gaulois<br />
           Et ecrivain de Javascriptum<br />
           Aprenti des arts obscures<br />
           Reactus, Express JSus et PostgreSQLus.
-        </Description>
+        </Text>
 
         {/*Portfolius*/}
         <SectionTitle>
@@ -117,6 +126,27 @@ const IndexPage = () => {
 
         <PortfolioBlock/>
 
+        {/*Footer*/}
+        <Footer>
+        <a>
+          <Text>
+            Linkedin
+          </Text>
+        </a>
+
+        <a>
+          <Text>
+            Github
+          </Text>
+        </a>
+
+        <a>
+          <Text>
+            Malt
+          </Text>
+        </a>
+        </Footer>
+        
       </Container>
       
     </main>

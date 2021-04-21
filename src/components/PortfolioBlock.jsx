@@ -10,7 +10,7 @@ const ProjectContainer = styled.div`
     display: flex;
     align-items: center;
     flex-direction:${props => props.reverse? 'row-reverse' : 'row'};
-    width: 41%;
+
     
     @media (max-width: 1200px) {
         flex-direction: column;

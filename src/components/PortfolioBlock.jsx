@@ -6,15 +6,27 @@ import { TweenMax, Power3 } from 'gsap'
 //styles
 
 const ProjectContainer = styled.div`
+    margin-top: ${props => props.first? '6em' : '10em'};
     display: flex;
     align-items: center;
     flex-direction:${props => props.reverse? 'row-reverse' : 'row'};
+    width: 41%;
+    
+    @media (max-width: 1200px) {
+        flex-direction: column;
+        margin-top: 6em;
+    }
 `
 
 const ProjectThumbnail = styled.div`
     background-color: #C4C4C4;
     height: 16em;
-    width: 22em;
+    width: 24em;
+    margin-right: 6em;
+
+    @media (max-width: 1200px) {
+        margin-right: 0;
+    }
 `
 
 const ProjectTitle = styled.h3`
@@ -41,7 +53,7 @@ const ProjectDescription = styled.p`
 const PortfolioBlock = () => {
     return (
         <>
-            <ProjectContainer>
+            <ProjectContainer first>
                 <ProjectThumbnail />
                 <ProjectDescription>
                     <ProjectTitle>
@@ -52,7 +64,7 @@ const PortfolioBlock = () => {
                 </ProjectDescription>
             </ProjectContainer>
 
-            <ProjectContainer reverse>
+            <ProjectContainer >
             <ProjectThumbnail />
             <ProjectDescription>
                 <ProjectTitle>

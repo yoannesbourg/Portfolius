@@ -66,7 +66,8 @@ const SectionTitle = styled.h2`
   font-weight: 200;
   line-height: 1.5;
   text-align: center;
-  margin-top: 2em;
+  margin-top: 5em;
+  margin-bottom: 0;
 `
 
 //animation

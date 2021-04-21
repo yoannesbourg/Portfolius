@@ -3,6 +3,7 @@ import '../fonts/perpetua/perpeta.ttf'
 import Portrait from '../images/protrait.png'
 import styled from "styled-components"
 import { TweenMax, Power3 } from 'gsap'
+import PortfolioBlock from '../components/PortfolioBlock'
 
 // styles
 const Container = styled.div`
@@ -65,6 +66,7 @@ color: black;
   font-weight: 200;
   line-height: 1.5;
   text-align: center;
+  margin-top: 2em;
 `
 
 //animation
@@ -110,6 +112,7 @@ const IndexPage = () => {
         {/*Portfolius*/}
         <SectionTitle>
           - PORTFOLIUS -
+          <PortfolioBlock/>
         </SectionTitle>
 
       </Container>

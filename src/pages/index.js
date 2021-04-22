@@ -4,9 +4,9 @@ import styled from "styled-components"
 import PortfolioBlock from '../components/PortfolioBlock'
 import { StaticImage } from "gatsby-plugin-image"
 
-export function Portrait() {
-  return <StaticImage src="../images/protrait.png" alt="A dinosaur" />
-}
+// export function Portrait() {
+//   return <StaticImage src="../images/protrait.png" alt="A dinosaur" />
+// }
 
 // styles
 const Container = styled.div`
@@ -74,7 +74,7 @@ const IndexPage = () => {
           Yoannesbourg
         </Heading>
  
-        
+        <StaticImage src="../images/protrait.png" alt="A dinosaur" />
 
         <Text >
           Ave Cesar,<br />

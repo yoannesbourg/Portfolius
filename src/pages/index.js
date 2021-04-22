@@ -4,10 +4,6 @@ import styled from "styled-components"
 import PortfolioBlock from '../components/PortfolioBlock'
 import { StaticImage } from "gatsby-plugin-image"
 
-// export function Portrait() {
-//   return <StaticImage src="../images/protrait.png" alt="A dinosaur" />
-// }
-
 // styles
 const Container = styled.div`
 display: flex;

@@ -1,9 +1,12 @@
 import * as React from "react"
 import '../fonts/perpetua/perpeta.ttf'
-import Portrait from '../images/protrait.png'
 import styled from "styled-components"
-import { TweenMax, Power3 } from 'gsap'
 import PortfolioBlock from '../components/PortfolioBlock'
+import { StaticImage } from "gatsby-plugin-image"
+
+export function Portrait() {
+  return <StaticImage src="../images/protrait.png" alt="A dinosaur" />
+}
 
 // styles
 const Container = styled.div`
@@ -20,32 +23,12 @@ const Heading = styled.h1`
   font-size: 8em;
   letter-spacing: 0.2em;
   font-weight: 200;
-  opacity: 0;
+  opacity: 1;
 
   @media (max-width: 1100px) {
     font-size: 4em;
     margin-top: 2em;
   }
-`
-
-const HeaderImg = styled.img.attrs({
-  src: Portrait
-})`
-  margin: -7em auto 1em auto;
-  transform: translateY(-100%);
-  opacity: 0;
-
-@media(min-width: 1200px) {
-  width: 40%;
-}
-
-@media(max-width: 1200px) {
-  margin-top: 0;
-}
-
-@media(max-width: 768px) {
-  width: 90%;
-}
 `
 
 const Text = styled.p`
@@ -79,39 +62,21 @@ const Footer = styled.div`
   font-size: .7em;
 `
 
-//animation
-
-
 // markup
 const IndexPage = () => {
-  let titleItem = React.useRef(null)
-  let portraitItem = React.useRef(null)
-  let descriptionItem = React.useRef(null)
-
-  React.useEffect(() => {
-    TweenMax.to(
-      titleItem, .8, { y: "0%", duration: 3, stagger: 0.25, opacity: 1 }
-    )
-    TweenMax.to(
-      portraitItem, .8, { y: '0%', duration: 3 , opacity: 1, delay: 0.5}
-    )
-    TweenMax.to(
-      descriptionItem, .8, { y: '0%', duration: 1.5 , opacity: 1, delay:1}
-    )
-  })
 
   return (
     <main >
       <title>Portfolius</title>   
       <Container>
 
-        <Heading ref={el => titleItem = el}>
+        <Heading>
           Yoannesbourg
         </Heading>
+ 
+        
 
-          <HeaderImg ref={el => portraitItem = el}/>
-
-        <Text ref={el => descriptionItem = el}>
+        <Text >
           Ave Cesar,<br />
           Moi Yoannus, fidèle serveur de l'empire gaulois<br />
           Et ecrivain de Javascriptum<br />

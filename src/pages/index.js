@@ -24,13 +24,24 @@ const Heading = styled.h1`
   font-size: 8em;
   letter-spacing: 0.2em;
   font-weight: 200;
-  opacity: 0;
-  margin: .5em 0 .25em 0;
+  opacity: 1;
+  margin: 0 0 .25em 0;
 
   @media (max-width: 1100px) {
     font-size: 3em;
-    margin-top: 1em;
+    margin-top: 41vh;
   }
+`
+
+const LayerElement = styled.div`
+  width: 500px;
+  height: 100px;
+  background-color: white;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 1;
 `
 
 const Text = styled.p`
@@ -69,31 +80,40 @@ const Footer = styled.div`
 // markup
 const IndexPage = () => {
   let titleItem = React.useRef(null)
+  let layer = React.useRef(null)
   let portraitItem = React.useRef(null)
   let descriptionItem = React.useRef(null)
 
 
 
   React.useEffect(()=>{
+    // TweenMax.to(
+    //   titleItem, .8, { y: "40vh", duration: 3, stagger: 0.25, opacity: 1 }
+    // )
     TweenMax.to(
-      titleItem, .8, { y: "0%", duration: 3, stagger: 0.25, opacity: 1 }
+      layer, .8, {left: '110%' }
     )
+
+
   })
   return (
     <main >
       <title>Portfolius</title>   
       <Container>
 
+        <LayerElement ref={el => layer = el}/>
+        
         <Heading ref={el => titleItem = el}>
           Yoannesbourg
         </Heading>
  
-        <StaticImage 
+        {/* <StaticImage 
           src="../images/protrait.png" 
           alt="A dinosaur" 
           ref={el => portraitItem = el}
           width={500}
-          height={535}/>
+          height={535}
+          opaciy={0}/>
 
         <Text ref={el => descriptionItem = el}>
           Ave Cesar,<br />
@@ -101,17 +121,17 @@ const IndexPage = () => {
           Et ecrivain de Javascriptum<br />
           Aprenti des arts obscures<br />
           Reactus, Express JSus et PostgreSQLus.
-        </Text>
+        </Text> */}
 
         {/*Portfolius*/}
-        <SectionTitle>
+        {/* <SectionTitle>
           - PORTFOLIUS -
         </SectionTitle>
 
-        <PortfolioBlock/>
+        <PortfolioBlock/> */}
 
         {/*Footer*/}
-        <Footer>
+        {/* <Footer>
         <a>
           <Text>
             Linkedin
@@ -129,7 +149,7 @@ const IndexPage = () => {
             Malt
           </Text>
         </a>
-        </Footer>
+        </Footer> */}
         
       </Container>
       

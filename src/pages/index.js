@@ -91,7 +91,7 @@ const IndexPage = () => {
     //   titleItem, .8, { y: "40vh", duration: 3, stagger: 0.25, opacity: 1 }
     // )
     TweenMax.to(
-      layer, .8, {left: '110%' }
+      layer, 1, {left: '110%' }
     )
 
 

@@ -12,6 +12,10 @@ flex-direction:column;
 align-items: center;
 width: 50%;
 margin: 0 auto;
+
+@media (max-width: 768px) {
+  width: 80%;
+}
 `
 
 const Heading = styled.h1`
@@ -21,10 +25,11 @@ const Heading = styled.h1`
   letter-spacing: 0.2em;
   font-weight: 200;
   opacity: 0;
+  margin: .5em 0 .25em 0;
 
   @media (max-width: 1100px) {
-    font-size: 4em;
-    margin-top: 2em;
+    font-size: 3em;
+    margin-top: 1em;
   }
 `
 
@@ -36,7 +41,9 @@ const Text = styled.p`
   font-weight: 200;
   line-height: 1.5;
   text-align: center;
-
+  @media (max-width: 768px) {
+    font-size: 1.7em;
+}
 `
 
 const SectionTitle = styled.h2`
@@ -81,7 +88,12 @@ const IndexPage = () => {
           Yoannesbourg
         </Heading>
  
-        <StaticImage src="../images/protrait.png" alt="A dinosaur" ref={el => portraitItem = el}/>
+        <StaticImage 
+          src="../images/protrait.png" 
+          alt="A dinosaur" 
+          ref={el => portraitItem = el}
+          width={500}
+          height={535}/>
 
         <Text ref={el => descriptionItem = el}>
           Ave Cesar,<br />

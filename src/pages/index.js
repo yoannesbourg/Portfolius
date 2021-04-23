@@ -3,6 +3,7 @@ import '../fonts/perpetua/perpeta.ttf'
 import styled from "styled-components"
 import PortfolioBlock from '../components/PortfolioBlock'
 import { StaticImage } from "gatsby-plugin-image"
+import { TweenMax, Power3 } from 'gsap'
 
 // styles
 const Container = styled.div`
@@ -19,7 +20,7 @@ const Heading = styled.h1`
   font-size: 8em;
   letter-spacing: 0.2em;
   font-weight: 200;
-  opacity: 1;
+  opacity: 0;
 
   @media (max-width: 1100px) {
     font-size: 4em;
@@ -60,19 +61,29 @@ const Footer = styled.div`
 
 // markup
 const IndexPage = () => {
+  let titleItem = React.useRef(null)
+  let portraitItem = React.useRef(null)
+  let descriptionItem = React.useRef(null)
 
+
+
+  React.useEffect(()=>{
+    TweenMax.to(
+      titleItem, .8, { y: "0%", duration: 3, stagger: 0.25, opacity: 1 }
+    )
+  })
   return (
     <main >
       <title>Portfolius</title>   
       <Container>
 
-        <Heading>
+        <Heading ref={el => titleItem = el}>
           Yoannesbourg
         </Heading>
  
-        <StaticImage src="../images/protrait.png" alt="A dinosaur" />
+        <StaticImage src="../images/protrait.png" alt="A dinosaur" ref={el => portraitItem = el}/>
 
-        <Text >
+        <Text ref={el => descriptionItem = el}>
           Ave Cesar,<br />
           Moi Yoannus, fidèle serveur de l'empire gaulois<br />
           Et ecrivain de Javascriptum<br />

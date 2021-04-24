@@ -4,6 +4,13 @@ import styled from "styled-components"
 import PortfolioBlock from '../components/PortfolioBlock'
 import { StaticImage } from "gatsby-plugin-image"
 import { TweenMax, Power3 } from 'gsap'
+import { createGlobalStyle } from 'styled-components';
+
+createGlobalStyle`
+  html {
+    overflow-x: hidden;
+  }
+`
 
 // styles
 const Container = styled.div`
@@ -12,6 +19,7 @@ flex-direction:column;
 align-items: center;
 width: 50%;
 margin: 0 auto;
+overflow-x: hidden; 
 
 @media (max-width: 768px) {
   width: 80%;
@@ -25,7 +33,7 @@ const Heading = styled.h1`
   letter-spacing: 0.2em;
   font-weight: 200;
   opacity: 1;
-  margin: 0 0 .25em 0;
+  margin: 41vh 0 .25em 0;
 
   @media (max-width: 1100px) {
     font-size: 3em;
@@ -34,8 +42,8 @@ const Heading = styled.h1`
 `
 
 const LayerElement = styled.div`
-  width: 500px;
-  height: 100px;
+  width: 1000px;
+  height: 200px;
   background-color: white;
   position: absolute;
   top: 50%;
@@ -91,7 +99,7 @@ const IndexPage = () => {
     //   titleItem, .8, { y: "40vh", duration: 3, stagger: 0.25, opacity: 1 }
     // )
     TweenMax.to(
-      layer, 1, {left: '110%' }
+      layer, 1, {left: '120%' }
     )
 
 

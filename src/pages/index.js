@@ -128,7 +128,7 @@ const IndexPage = () => {
       layer, 2, {left: '120%' }
     )
     TweenMax.to(
-      main, 2, {y: 0, delay: 2}
+      main, 1, {y: 0, delay: 2}
     )
   })
 
@@ -163,14 +163,14 @@ const IndexPage = () => {
           </Text>
 
           {/*Portfolius*/}
-          {/* <SectionTitle>
+          <SectionTitle>
             - PORTFOLIUS -
           </SectionTitle>
 
-          <PortfolioBlock/> */}
+          <PortfolioBlock/>
 
           {/*Footer*/}
-          {/* <Footer>
+          <Footer>
           <a>
             <Text>
               Linkedin
@@ -188,7 +188,7 @@ const IndexPage = () => {
               Malt
             </Text>
           </a>
-          </Footer> */}
+          </Footer>
         </MainSection>
         
       </Container>

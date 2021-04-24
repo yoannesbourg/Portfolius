@@ -23,7 +23,7 @@ flex-direction:column;
 align-items: center;
 width: 65%;
 margin: 0 auto;
-overflow-x: hidden; 
+overflow-y: hidden; 
 
 @media (max-width: 768px) {
   width: 80%;
@@ -37,11 +37,12 @@ const Heading = styled.h1`
   letter-spacing: 0.2em;
   font-weight: 200;
   opacity: 1;
-  margin: 41vh 0 .25em 0;
+  margin: 1em 0 .25em 0;
+  transform: translate( 0, 30vh);
 
   @media (max-width: 1100px) {
     font-size: 3em;
-    margin-top: 41vh;
+    transform: translate( 0, 40vh);
   }
   @media (max-width: 475px) {
     font-size: 2em;
@@ -95,12 +96,24 @@ const Footer = styled.div`
   font-size: .7em;
 `
 
+const Portrait = styled.div`
+`
+
+const MainSection = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  overflow: hidden;
+  transform: translateY(500px);
+`
+
 // markup
 const IndexPage = () => {
   let titleItem = React.useRef(null)
   let layer = React.useRef(null)
   let portraitItem = React.useRef(null)
   let descriptionItem = React.useRef(null)
+  let main = React.useRef(null)
 
 
 
@@ -109,14 +122,16 @@ const IndexPage = () => {
     //   titleItem, .8, { y: "40vh", duration: 3, stagger: 0.25, opacity: 1 }
     // )
     TweenMax.to(
+      titleItem, 1, {y: '0', delay: 2}
+    )
+    TweenMax.to(
       layer, 2, {left: '120%' }
     )
     TweenMax.to(
-      titleItem, 1, {y: '-215', delay: 1 }
+      main, 2, {y: 0, delay: 2}
     )
-
-
   })
+
   return (
     <main >
       <title>Portfolius</title>   
@@ -129,49 +144,52 @@ const IndexPage = () => {
           Yoannesbourg
         </Heading>
  
-        <StaticImage 
-          src="../images/protrait.png" 
-          alt="A dinosaur" 
-          ref={el => portraitItem = el}
-          width={500}
-          height={535}
-          opaciy={0}/>
+        <MainSection ref={el => main = el}>
+          <Portrait>
+            <StaticImage 
+              src="../images/protrait.png" 
+              alt="A dinosaur" 
+              width={500}
+              height={535}
+              />
+          </Portrait>
 
-        <Text ref={el => descriptionItem = el}>
-          Ave Cesar,<br />
-          Moi Yoannus, fidèle serveur de l'empire gaulois<br />
-          Et ecrivain de Javascriptum<br />
-          Aprenti des arts obscures<br />
-          Reactus, Express JSus et PostgreSQLus.
-        </Text>
-
-        {/*Portfolius*/}
-        {/* <SectionTitle>
-          - PORTFOLIUS -
-        </SectionTitle>
-
-        <PortfolioBlock/> */}
-
-        {/*Footer*/}
-        {/* <Footer>
-        <a>
-          <Text>
-            Linkedin
+          <Text ref={el => descriptionItem = el}>
+            Ave Cesar,<br />
+            Moi Yoannus, fidèle serveur de l'empire gaulois<br />
+            Et ecrivain de Javascriptum<br />
+            Aprenti des arts obscures<br />
+            Reactus, Express JSus et PostgreSQLus.
           </Text>
-        </a>
 
-        <a>
-          <Text>
-            Github
-          </Text>
-        </a>
+          {/*Portfolius*/}
+          {/* <SectionTitle>
+            - PORTFOLIUS -
+          </SectionTitle>
 
-        <a>
-          <Text>
-            Malt
-          </Text>
-        </a>
-        </Footer> */}
+          <PortfolioBlock/> */}
+
+          {/*Footer*/}
+          {/* <Footer>
+          <a>
+            <Text>
+              Linkedin
+            </Text>
+          </a>
+
+          <a>
+            <Text>
+              Github
+            </Text>
+          </a>
+
+          <a>
+            <Text>
+              Malt
+            </Text>
+          </a>
+          </Footer> */}
+        </MainSection>
         
       </Container>
       

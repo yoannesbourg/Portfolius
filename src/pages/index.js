@@ -6,9 +6,13 @@ import { StaticImage } from "gatsby-plugin-image"
 import { TweenMax, Power3 } from 'gsap'
 import { createGlobalStyle } from 'styled-components';
 
-createGlobalStyle`
+const GlobalStyle =createGlobalStyle`
   html {
     overflow-x: hidden;
+  }
+  ::selection {
+    background-color: #000;
+    color: white;
   }
 `
 
@@ -17,7 +21,7 @@ const Container = styled.div`
 display: flex;
 flex-direction:column;
 align-items: center;
-width: 50%;
+width: 65%;
 margin: 0 auto;
 overflow-x: hidden; 
 
@@ -29,7 +33,7 @@ overflow-x: hidden;
 const Heading = styled.h1`
   color: black;
   font-family: 'Perpetua';
-  font-size: 8em;
+  font-size: 6em;
   letter-spacing: 0.2em;
   font-weight: 200;
   opacity: 1;
@@ -39,10 +43,13 @@ const Heading = styled.h1`
     font-size: 3em;
     margin-top: 41vh;
   }
+  @media (max-width: 475px) {
+    font-size: 2em;
+  }
 `
 
 const LayerElement = styled.div`
-  width: 1000px;
+  width: 50%;
   height: 200px;
   background-color: white;
   position: absolute;
@@ -50,6 +57,9 @@ const LayerElement = styled.div`
   left: 50%;
   transform: translate(-50%, -50%);
   z-index: 1;
+  @media (max-width: 1424px) {
+  width: 70%;
+  }
 `
 
 const Text = styled.p`
@@ -99,7 +109,10 @@ const IndexPage = () => {
     //   titleItem, .8, { y: "40vh", duration: 3, stagger: 0.25, opacity: 1 }
     // )
     TweenMax.to(
-      layer, 1, {left: '120%' }
+      layer, 2, {left: '120%' }
+    )
+    TweenMax.to(
+      titleItem, 1, {y: '-215', delay: 1 }
     )
 
 
@@ -107,6 +120,7 @@ const IndexPage = () => {
   return (
     <main >
       <title>Portfolius</title>   
+      <GlobalStyle />
       <Container>
 
         <LayerElement ref={el => layer = el}/>
@@ -115,7 +129,7 @@ const IndexPage = () => {
           Yoannesbourg
         </Heading>
  
-        {/* <StaticImage 
+        <StaticImage 
           src="../images/protrait.png" 
           alt="A dinosaur" 
           ref={el => portraitItem = el}
@@ -129,7 +143,7 @@ const IndexPage = () => {
           Et ecrivain de Javascriptum<br />
           Aprenti des arts obscures<br />
           Reactus, Express JSus et PostgreSQLus.
-        </Text> */}
+        </Text>
 
         {/*Portfolius*/}
         {/* <SectionTitle>
